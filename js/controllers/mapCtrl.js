@@ -16,7 +16,7 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
         templateUrl: 'partials/modal.html',
         controller: 'modalController',
         size: size,
-        resolve: { 
+        resolve: {
           items: function () {
             return $scope.items;
           }
@@ -73,7 +73,7 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
 
         console.log('coordinates are within Virgina');
 
-        // Position.coords is only avaible in this scope, share over 
+        // Position.coords is only avaible in this scope, share over
         // Geosearch service
 
         Geosearch.coords = position.coords;
@@ -114,8 +114,8 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
       $rootScope.$broadcast('updateToast');
 
       Geosearch.results = Geosearch.query({
-        lat: Geosearch.coords.latitude, 
-        lon: Geosearch.coords.longitude, 
+        lat: Geosearch.coords.latitude,
+        lon: Geosearch.coords.longitude,
         dist: searchRadii[index]
       }, function() {
 
@@ -129,12 +129,12 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
           return doSearch(index + 1);
         }
 
-        Geosearch.results.forEach(function(el) { 
+        Geosearch.results.forEach(function(el) {
           el.dist = el.dist * 0.000621371;
           el.score = el.score ? Math.round(el.score) : 'n/a';
         });
 
-        Geosearch.results = 
+        Geosearch.results =
           $filter('orderBy')(Geosearch.results, 'dist', false);
 
         $rootScope.$broadcast('geosearchFire');

@@ -1,5 +1,5 @@
 openHealthDataAppControllers.controller('modalController',
-  ['$scope', '$modalInstance', 'items', '$log', '$location', 
+  ['$scope', '$modalInstance', 'items', '$log', '$location',
   function($scope, $modalInstance, items, $log, $location){
 
   $scope.ok = function () {

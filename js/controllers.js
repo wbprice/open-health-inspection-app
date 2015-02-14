@@ -25,5 +25,5 @@ Controllers
 
 'use strict';
 
-var openHealthDataAppControllers = 
+var openHealthDataAppControllers =
   angular.module('openHealthDataAppControllers', []);

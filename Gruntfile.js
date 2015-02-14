@@ -40,8 +40,8 @@ module.exports = function(grunt) {
 
         uglify: {
             build: {
-                src: 'js/production.js',
-                dest: 'js/production.min.js'
+                src: 'dist/production.js',
+                dest: 'dist/production.min.js'
             }
         },
 
@@ -64,6 +64,17 @@ module.exports = function(grunt) {
                     dest: 'img/build/'
                 }]
             }
+        },
+
+        browserify: {
+          dist: {
+            files: {
+              'js/module.js': ['js/directives/**/*.js'],
+            },
+            options: {
+              // transform: ['coffeeify']
+            }
+          }
         },
 
         watch: {
@@ -115,9 +126,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-browserify');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'imagemin']);
+    grunt.registerTask('build', ['browserify', 'concat', 'uglify', 'cssmin', 'imagemin']);
     grunt.registerTask('server', ['connect','open:dev','watch']);
 
 };

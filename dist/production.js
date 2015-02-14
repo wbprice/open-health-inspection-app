@@ -25,7 +25,7 @@ App.js
 'use strict';
 
 var openHealthDataApp = angular.module('openHealthDataApp', ['ngRoute',
-  'ui.bootstrap', 'openHealthDataAppControllers', 
+  'ui.bootstrap', 'openHealthDataAppControllers',
   'openHealthDataServices', 'openHealthDataAppFilters', 'ngTouch']);
 
 openHealthDataApp.config(['$routeProvider',
@@ -71,7 +71,7 @@ Controllers
 
 'use strict';
 
-var openHealthDataAppControllers = 
+var openHealthDataAppControllers =
   angular.module('openHealthDataAppControllers', []);
 
 /*
@@ -107,9 +107,9 @@ openHealthDataApp.directive('bindOnce', function() {
       var model = $parse(attrs.focusMe);
       scope.$watch(model, function(value) {
         // console.log('value=',value);
-        if(value === true) { 
+        if(value === true) {
           $timeout(function() {
-            element[0].focus(); 
+            element[0].focus();
           });
         }
       });
@@ -245,6 +245,26 @@ angular.module('openHealthDataAppFilters', [])
       }
     }
   });
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = function(ngModule) {
+  console.log('require worked.');
+  return function() {
+    console.log('require worked.');
+  }
+}
+
+},{}],2:[function(require,module,exports){
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+var ngModule = angular.module('searchInterface', ['$scope']);
+
+require('./search--directive.js')(ngModule);
+// require('./search--service.js')(ngModule);
+
+},{"./search--directive.js":1}]},{},[1,2,3]);
+
 /*
     The frontend for Code for Hampton Roads' Open Health Inspection Data.
     Copyright (C) 2014  Code for Hampton Roads contributors.
@@ -406,7 +426,7 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
         templateUrl: 'partials/modal.html',
         controller: 'modalController',
         size: size,
-        resolve: { 
+        resolve: {
           items: function () {
             return $scope.items;
           }
@@ -463,7 +483,7 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
 
         console.log('coordinates are within Virgina');
 
-        // Position.coords is only avaible in this scope, share over 
+        // Position.coords is only avaible in this scope, share over
         // Geosearch service
 
         Geosearch.coords = position.coords;
@@ -504,8 +524,8 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
       $rootScope.$broadcast('updateToast');
 
       Geosearch.results = Geosearch.query({
-        lat: Geosearch.coords.latitude, 
-        lon: Geosearch.coords.longitude, 
+        lat: Geosearch.coords.latitude,
+        lon: Geosearch.coords.longitude,
         dist: searchRadii[index]
       }, function() {
 
@@ -519,12 +539,12 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
           return doSearch(index + 1);
         }
 
-        Geosearch.results.forEach(function(el) { 
+        Geosearch.results.forEach(function(el) {
           el.dist = el.dist * 0.000621371;
           el.score = el.score ? Math.round(el.score) : 'n/a';
         });
 
-        Geosearch.results = 
+        Geosearch.results =
           $filter('orderBy')(Geosearch.results, 'dist', false);
 
         $rootScope.$broadcast('geosearchFire');
@@ -548,7 +568,7 @@ openHealthDataAppControllers.controller('mapCtrl', ['$scope', '$rootScope',
   }]);
 
 openHealthDataAppControllers.controller('modalController',
-  ['$scope', '$modalInstance', 'items', '$log', '$location', 
+  ['$scope', '$modalInstance', 'items', '$log', '$location',
   function($scope, $modalInstance, items, $log, $location){
 
   $scope.ok = function () {
@@ -562,6 +582,7 @@ openHealthDataAppControllers.controller('modalController',
   };
 
 }]);
+
 openHealthDataAppControllers.controller('restaurantDetailCtrl', ['$scope',
  '$routeParams', '$http', '$location', '$rootScope', 'Geosearch',
  'Inspections', function($scope, $routeParams, $http, $location,
@@ -764,7 +785,7 @@ openHealthDataAppControllers.controller('searchResultsCtrl', ['$scope',
  '$rootScope', '$location', 'Search', 'Geosearch',
   function($scope, $rootScope, $location, Search, Geosearch) {
 
-    var searchType; 
+    var searchType;
 
     $rootScope.showMore = false;
 
@@ -791,10 +812,10 @@ openHealthDataAppControllers.controller('searchResultsCtrl', ['$scope',
       if (searchType === 'search') {
         console.log('get more search results of that name?');
         $rootScope.$broadcast('moreSearch');
-        
+
       } else if (searchType === 'geosearch') {
         console.log('get more search results around here.');
-        $rootScope.$broadcast('moreGeosearch'); 
+        $rootScope.$broadcast('moreGeosearch');
       }
     };
 
