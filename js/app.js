@@ -26,7 +26,7 @@ App.js
 
 var openHealthDataApp = angular.module('openHealthDataApp', ['ngRoute',
   'ui.bootstrap', 'openHealthDataAppControllers',
-  'openHealthDataServices', 'openHealthDataAppFilters', 'ngTouch']);
+  'openHealthDataServices', 'openHealthDataAppFilters', 'searchInterface', 'ngTouch']);
 
 openHealthDataApp.config(['$routeProvider',
   function($routeProvider) {

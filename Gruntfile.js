@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+var stringify = require('stringify');
+
 module.exports = function(grunt) {
 
     // 1. All configuration goes here
@@ -73,6 +75,7 @@ module.exports = function(grunt) {
             },
             options: {
               // transform: ['coffeeify']
+              transform: ['stringify']
             }
           }
         },
@@ -80,7 +83,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['js/*.js', 'js/controllers/*.js'],
-                tasks: ['concat', 'uglify'],
+                tasks: ['browserify','concat', 'uglify'],
                 options: {
                     spawn: false,
                 },

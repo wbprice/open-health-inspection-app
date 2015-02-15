@@ -1,6 +1,26 @@
 module.exports = function(ngModule) {
-  console.log('require worked.');
-  return function() {
-    console.log('require worked.');
-  }
+
+  ngModule.directive('searchFilter', function() {
+
+    console.log('directive triggered.');
+
+    var directive = {
+      templateUrl: 'search.html',
+      // template: 'Yo',
+      restrict: 'E',
+      replace: false,
+      controllerAs: 'ctrl',
+      controller: function() {
+        console.log('directive here.');
+      }
+    }
+
+    return directive;
+
+  });
+
+  ngModule.run(['$templateCache', function($templateCache) {
+    $templateCache.put('search.html', require('./search.tpl.html'));
+  }]);
+
 }
