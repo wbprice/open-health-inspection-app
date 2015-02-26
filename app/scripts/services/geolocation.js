@@ -7,7 +7,7 @@
  * # geolocation
  * Service in the openHealthInspectionAppApp.
  */
-angular.module('openHealthInspectionAppApp')
+angular.module('openHealthInspectionApp')
   .service('geolocation', ['$q','$timeout', function ($q, $timeout) {
     return {
 
@@ -15,7 +15,7 @@ angular.module('openHealthInspectionAppApp')
 
         var deferred, countdown;
 
-        deferred = q.defer();
+        deferred = $q.defer();
         countdown = function() {
           deferred.reject('The request to get the user\'s location timed out.');
         };
