@@ -1,38 +1,35 @@
-<section id="locateuser">
-  <h1>Where are you?</h1>
+<section id="locateuser" class="clearfix">
 
-  <div class="row">
+  <h1 class="col-sm-12">Where are you?</h1>
 
-    <div class="col-sm-12 col-md-6">
+  <div class="col-sm-12 col-md-6">
 
-      <form ng-submit="getLatLngFromZip()" novalidate>
-        <div class="form-group">
-          <label for="zipcode">Type Your Zip Code</label>
-          <input class="form-control input-lg" id="zipcode" ng-model="zipcode" type="text" />
-          <button class="btn btn-primary btn-lg">S</button>
-        </div>
-      </form>
-
-      <form ng-submit="getLatLngFromCityName()" novalidate>
-        <div class="form-group">
-          <label>Type Your City Name</label>
-          <input class="form-control input-lg" id="city" ng-model="city" type="text"/>
-          <button class="btn btn-primary btn-lg">S</button>
-        </div>
-      </form>
-
-    </div>
-
-    <!-- <div class="dividing-line">
-      <p><span>OR</span></p>
-    </div> -->
-
-    <form class="col-sm-12 col-md-6">
+    <form ng-submit="getLatLngFromZip()" novalidate>
       <div class="form-group">
-        <button id="gps" class="btn btn-success btn-lg">Geolocate!</button>
+        <label for="zipcode">Type Your Zip Code</label>
+        <input class="form-control input-lg" id="zipcode" ng-model="zipcode" type="text" />
+        <button class="btn btn-primary btn-lg">S</button>
+      </div>
+    </form>
+
+    <form ng-submit="getLatLngFromCityName()" novalidate>
+      <div class="form-group">
+        <label>Type Your City Name</label>
+        <input class="form-control input-lg" id="city" ng-model="city" type="text"/>
+        <button class="btn btn-primary btn-lg">S</button>
       </div>
     </form>
 
   </div>
+
+  <!-- <div class="dividing-line">
+    <p><span>OR</span></p>
+  </div> -->
+
+  <form class="col-sm-12 col-md-6">
+    <div class="form-group">
+      <button id="gps" class="btn btn-success btn-lg">Geolocate!</button>
+    </div>
+  </form>
 
 </section>

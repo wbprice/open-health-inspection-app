@@ -1,4 +1,9 @@
 #locateuser {
+  background: $lightest-gray;
+
+  .form-group {
+
+  }
 
   .form-control {
     text-align: center;
@@ -8,6 +13,10 @@
     button {
       width: 20%;
     }
+  }
+
+  button#gps {
+    text-align: center;
   }
 
 }
