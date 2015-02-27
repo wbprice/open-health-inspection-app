@@ -7,7 +7,7 @@
  * # locateUser
  */
 angular.module('openHealthInspectionApp')
-  .directive('locateUser', ['geolocation', function (geolocation) {
+  .directive('locateUser', [function () {
     return {
       templateUrl: './scripts/directives/locateuser-tpl.html',
       controllerAs: 'ctrl',
@@ -15,8 +15,16 @@ angular.module('openHealthInspectionApp')
       link: function postLink(scope, element, attrs) {
         // element.text('this is the locateUser directive');
       },
-      controller: function() {
+      controller: ['$scope', 'geolocation', function($scope, geolocation) {
 
-      },
+        $scope.getLatLngFromZip = function() {
+          console.log('should return a lat/lng from zipcode: ' + $scope.zipcode);
+        };
+
+        $scope.getLatLngFromCityName = function() {
+          console.log('should return a lat/lng from city: ' + $scope.city);
+        };
+
+      }],
     };
   }]);

@@ -1,13 +1,36 @@
-<section id="locateuser" class="col-sm-12 col-md-4">
+<section id="locateuser">
   <h1>Where are you?</h1>
-  <h5>Type In Your Zip Code</h5>
-  <input type="text" />
-  <h5>Select your city</h5>
-  <select>
-    <option value="norfolk">Norfolk</option>
-    <option value="chesapeake">Chesapeake</option>
-    <option value="virginia-beach">Virginia Beach</option>
-  </select>
-  <h5>Use GPS</h5>
-  <button>Geolocate!</button>
+
+  <div class="row">
+
+    <div class="col-sm-12 col-md-6">
+
+      <form ng-submit="getLatLngFromZip()" novalidate>
+        <div class="form-group">
+          <label for="zipcode">Type Your Zip Code</label>
+          <input class="form-control input-lg" id="zipcode" ng-model="zipcode" type="text" />
+        </div>
+        <button class="btn btn-primary btn-lg">Submit</button>
+      </form>
+
+      <form ng-submit="getLatLngFromCityName()" novalidate>
+        <div class="form-group">
+          <label>Type Your City Name</label>
+          <input class="form-control input-lg" id="city" ng-model="city" type="text"/>
+        </div>
+        <button class="btn btn-primary btn-lg">Submit</button>
+      </form>
+
+    </div>
+
+    <form class="col-sm-12 col-md-6">
+
+      <div class="form-group">
+        <button id="gps" class="btn btn-success btn-lg">Geolocate!</button>
+      </div>
+
+    </form>
+
+  </div>
+
 </section>

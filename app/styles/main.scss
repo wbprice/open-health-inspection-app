@@ -1,15 +1,13 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
 
-// Get Includes -- Common variables that are used across modules.
 @import "includes/colors";
 @import "includes/typography";
-
-// Get Modules -- Styling for specific elements on page.
+@import "includes/forms";
 
 @import "modules/locateuser";
-// endbower
 
 .browsehappy {
   margin: 0.2em 0;

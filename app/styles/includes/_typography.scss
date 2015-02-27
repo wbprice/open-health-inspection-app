@@ -1,7 +1,43 @@
-$base-font-size: 14px;
-$xsmall-font: 10px;
-$small-font: 12px;
-$medium-font: 16px;
-$large-font: 20px;
-$xlarge-font: 24px;
-$gigantor-font: 28px;
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+
+body {
+  font-size: 16px;
+}
+
+$base-font-size: 1em;
+$xsmall-font: (10/16) + em;
+$small-font: (12/16) + em;
+$medium-font: 1em;
+$large-font: (20/16) + em;
+$xlarge-font: (24/16) + em;
+$gigantor-font: 2em;
+
+$header-font: 'Source Sans Pro', Helvetica, Arial, sans;
+$body-font: Helvetica, Arial, sans;
+
+h1, h2, h3, h4, h5 {
+  font-family: $header-font;
+}
+
+h1 {
+  font-size: $gigantor-font;
+  font-weight: 700;
+  margin: .5em 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: $xlarge-font;
+}
+
+h3 {
+  font-size: $large-font;
+}
+
+h4 {
+  font-size: $medium-font;
+}
+
+h5 {
+  font-size: $small-font;
+}
