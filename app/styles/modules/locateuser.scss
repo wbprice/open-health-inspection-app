@@ -1,4 +1,13 @@
 #locateuser {
-  background: $lightest-gray;
-  padding: 1em;
+
+  .form-control {
+    text-align: center;
+    input {
+      width: 80%;
+    }
+    button {
+      width: 20%;
+    }
+  }
+
 }

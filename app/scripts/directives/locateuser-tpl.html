@@ -9,26 +9,28 @@
         <div class="form-group">
           <label for="zipcode">Type Your Zip Code</label>
           <input class="form-control input-lg" id="zipcode" ng-model="zipcode" type="text" />
+          <button class="btn btn-primary btn-lg">S</button>
         </div>
-        <button class="btn btn-primary btn-lg">Submit</button>
       </form>
 
       <form ng-submit="getLatLngFromCityName()" novalidate>
         <div class="form-group">
           <label>Type Your City Name</label>
           <input class="form-control input-lg" id="city" ng-model="city" type="text"/>
+          <button class="btn btn-primary btn-lg">S</button>
         </div>
-        <button class="btn btn-primary btn-lg">Submit</button>
       </form>
 
     </div>
 
-    <form class="col-sm-12 col-md-6">
+    <!-- <div class="dividing-line">
+      <p><span>OR</span></p>
+    </div> -->
 
+    <form class="col-sm-12 col-md-6">
       <div class="form-group">
         <button id="gps" class="btn btn-success btn-lg">Geolocate!</button>
       </div>
-
     </form>
 
   </div>

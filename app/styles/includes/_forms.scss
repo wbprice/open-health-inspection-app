@@ -6,3 +6,18 @@ label {
   font-weight: 700;
   color: $dark-gray;
 }
+
+.form-group {
+
+  input, button {
+    border: none !important;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 0;
+  }
+
+  input {
+    width: inherit;
+  }
+
+}
