@@ -26,7 +26,7 @@ App.js
 
 var openHealthDataApp = angular.module('openHealthDataApp', ['ngRoute',
   'ui.bootstrap', 'openHealthDataAppControllers',
-  'openHealthDataServices', 'openHealthDataAppFilters', 'ngTouch', 'geocodeModule', 'geolocationModule']);
+  'openHealthDataServices', 'openHealthDataAppFilters', 'ngTouch', 'geocodeModule', 'geolocationModule', 'searchModule']);
 
 openHealthDataApp.config(['$routeProvider',
   function($routeProvider) {
@@ -450,7 +450,54 @@ var geolocationModule = angular.module('geolocationModule', []);
 require('./geolocation--directive')(geolocationModule);
 require('./geolocation--service')(geolocationModule);
 
-},{"./geolocation--directive":5,"./geolocation--service":6}]},{},[1,2,4,5,6,8]);
+},{"./geolocation--directive":5,"./geolocation--service":6}],9:[function(require,module,exports){
+'use strict';
+
+var searchModule = angular.module('searchModule', []);
+
+require('./search--directive')(searchModule);
+require('./search--service')(searchModule);
+
+},{"./search--directive":10,"./search--service":11}],10:[function(require,module,exports){
+module.exports = function(ngModule) {
+
+  ngModule.directive('searchMenu', [function() {
+
+    var directive = {
+      restrict: 'E',
+      replace: false,
+      scope: {
+      },
+      templateUrl: '/templates/search.html',
+      controllerAs: 'ctrl'
+    };
+
+    return directive;
+
+  }]);
+
+  ngModule.run(['$templateCache', function($templateCache){
+    $templateCache.put('/templates/search.html',
+      require('./search--template.html'));
+  }]);
+
+};
+
+},{"./search--template.html":12}],11:[function(require,module,exports){
+module.exports = function(ngModule) {
+
+  ngModule.factory('searchService', [function() {
+    return {
+
+    };
+  }]);
+
+};
+
+},{}],12:[function(require,module,exports){
+module.exports = "<div id=\"searchbar\" class=\"col-xs-12 col-sm-5 col-md-4 clearfix\">\n\n  <a href=\"#/\" class=\"visible-xs\" class=\"clearfix\">\n    <img class=\"logo\" src=\"img/build/logo.png\" height=\"48px\" width=\"48px\" alt=\"logo\">\n  </a>\n\n  <button ng-click=\"toggleSearchField()\" class=\"btn btn-lg btn-transparent\">\n    <span id=\"searchButton\" class=\"glyphicon glyphicon-search\"></span>\n  </button>\n\n  <button ng-click=\"goToResults()\" class=\"btn btn-lg btn-transparent\" ng-if=\"isCloseButtonVisible\">\n    <span class=\"glyphicon glyphicon-remove-circle\"></span>\n  </button>\n\n  <section id=\"search\" ng-show=\"isSearchbarVisible\" class=\"col-xs-12\">\n\n    <form ng-submit=\"nameSearch(0)\" class=\" clearfix\" novalidate>\n      <span id=\"exitButton\" ng-click=\"toggleSearchField()\" class=\"col-xs-1 glyphicon glyphicon-chevron-left\"></span>\n      <input id=\"searchField\" class=\"col-xs-9\" type=\"search\" ng-model=\"query\" placeholder=\"Search for a restaurant\" focus-me=\"isSearchbarVisible\"/>\n      <button class=\"btn btn-info col-xs-2\">\n        <span id=\"searchButton\" class=\"glyphicon glyphicon-search\"/>\n      </button>\n    </form>\n\n    <section class=\"clearfix row tray drop-shadow\">\n      <ul class=\"\">\n        <li class=\"col-xs-6 searchDescription\">\n        <small>Search in:</small>{{searchAreaText}}</li>\n        <li class=\"col-xs-6 moreButton\">\n          <a ng-click=\"toggleCityJump(true)\">\n            More Cities <i class=\"fa fa-plus-circle\"></i>\n          </a>\n        </li>\n      </ul>\n    </section>\n\n  </section>\n\n  <section class=\"clearfix tray drop-shadow\" ng-show=\"isVisible\">\n    <ul>\n      <li class=\"col-xs-12\">\n        <small>Displaying results</small>\n        {{searchQuery}} <span>In</span> {{searchAreaText}}\n      </li>\n    </ul>\n  </section>\n\n</div>\n";
+
+},{}]},{},[1,2,4,5,6,8,9,10,11]);
 
 /*
     The frontend for Code for Hampton Roads' Open Health Inspection Data.

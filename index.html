@@ -55,58 +55,60 @@
             </a>
           </div>
 
-          <div id="searchbar" class="col-xs-12 col-sm-5 col-md-4 clearfix" ng-controller="searchCtrl">
+          <search-menu></search-menu>
 
-            <section id="search" ng-show="isSearchbarVisible" class="col-xs-12">
+<!--           <div id="searchbar" class="col-xs-12 col-sm-5 col-md-4 clearfix" ng-controller="searchCtrl">
 
-              <form ng-submit="nameSearch(0)" class=" clearfix" novalidate>
-                <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
-                <input id="searchField" class="col-xs-9" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
-                <button class="btn btn-info col-xs-2">
-                  <span id="searchButton" class="glyphicon glyphicon-search"/>
-                </button>
-              </form>
+  <section id="search" ng-show="isSearchbarVisible" class="col-xs-12">
 
-              <section class="clearfix row tray drop-shadow">
-                <ul class="">
-                  <li class="col-xs-6 searchDescription">
-                  <small>Search in:</small>{{searchAreaText}}</li>
-                  <li class="col-xs-6 moreButton">
-                    <a ng-click="toggleCityJump(true)">
-                      More Cities <i class="fa fa-plus-circle"></i>
-                    </a>
-                  </li>
-                </ul>
-              </section>
+    <form ng-submit="nameSearch(0)" class=" clearfix" novalidate>
+      <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
+      <input id="searchField" class="col-xs-9" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
+      <button class="btn btn-info col-xs-2">
+        <span id="searchButton" class="glyphicon glyphicon-search"/>
+      </button>
+    </form>
 
-            </section>
+    <section class="clearfix row tray drop-shadow">
+      <ul class="">
+        <li class="col-xs-6 searchDescription">
+        <small>Search in:</small>{{searchAreaText}}</li>
+        <li class="col-xs-6 moreButton">
+          <a ng-click="toggleCityJump(true)">
+            More Cities <i class="fa fa-plus-circle"></i>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-            <a href="#/" class="visible-xs" class="clearfix">
-              <img class="logo" src="img/build/logo.png" height="48px" width="48px" alt="logo">
-            </a>
+  </section>
 
-            <button ng-click="toggleSearchField()" class="btn btn-lg btn-transparent">
-              <span id="searchButton" class="glyphicon glyphicon-search"></span>
-            </button>
+  <a href="#/" class="visible-xs" class="clearfix">
+    <img class="logo" src="img/build/logo.png" height="48px" width="48px" alt="logo">
+  </a>
 
-            <button ng-click="getLocationButton()" class="btn btn-lg btn-transparent">
-              <span class="fa fa-crosshairs"></span>
-            </button>
+  <button ng-click="toggleSearchField()" class="btn btn-lg btn-transparent">
+    <span id="searchButton" class="glyphicon glyphicon-search"></span>
+  </button>
 
-            <button ng-click="goToResults()" class="btn btn-lg btn-transparent" ng-if="isCloseButtonVisible">
-              <span class="glyphicon glyphicon-remove-circle"></span>
-            </button>
+  <button ng-click="getLocationButton()" class="btn btn-lg btn-transparent">
+    <span class="fa fa-crosshairs"></span>
+  </button>
 
-            <section class="clearfix tray drop-shadow" ng-show="isVisible">
-              <ul>
-                <li class="col-xs-12">
-                  <small>Displaying results</small>
-                  {{searchQuery}} <span>In</span> {{searchAreaText}}
-                </li>
-              </ul>
-            </section>
+  <button ng-click="goToResults()" class="btn btn-lg btn-transparent" ng-if="isCloseButtonVisible">
+    <span class="glyphicon glyphicon-remove-circle"></span>
+  </button>
 
-          </div>
+  <section class="clearfix tray drop-shadow" ng-show="isVisible">
+    <ul>
+      <li class="col-xs-12">
+        <small>Displaying results</small>
+        {{searchQuery}} <span>In</span> {{searchAreaText}}
+      </li>
+    </ul>
+  </section>
+
+</div> -->
 
         </div>
 
