@@ -32,12 +32,6 @@ module.exports = function(grunt) {
           ],
             dest: 'dist/production.js',
           },
-            styles: {
-              src: [
-                'css/main.css', 'css/776up.css', 'css/992up.css', 'css/1200up.css', '!css/production.css', '!css/production.min.css'
-              ],
-              dest: 'css/production.css'
-            }
         },
 
         uglify: {
@@ -53,7 +47,7 @@ module.exports = function(grunt) {
               style: 'expanded'
             },
             files: {
-              'dist/main.css': 'scss/main.scss',       // 'destination': 'source'
+              'dist/main.css': 'scss/main.scss', // 'destination': 'source'
             }
           }
         },
@@ -138,7 +132,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('build', ['browserify', 'concat', 'uglify', 'cssmin', 'imagemin']);
+    grunt.registerTask('build', ['browserify', 'concat', 'uglify', 'imagemin']);
     grunt.registerTask('default', ['connect','open:dev','watch']);
 
 };
