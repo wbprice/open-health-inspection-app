@@ -1,3 +1,5 @@
+/* All this stuff is going to be refactored.
+   I'm just working around it until I have time. */
 /*
     The frontend for Code for Hampton Roads' Open Health Inspection Data.
     Copyright (C) 2014  Code for Hampton Roads contributors.
@@ -1153,8 +1155,5 @@ Normal sized desktop styles here.
 /************************
 Big desktop styles here
 *************************/
-/* body {
-  background: orange;
-} */
 
 /*# sourceMappingURL=main.css.map */
