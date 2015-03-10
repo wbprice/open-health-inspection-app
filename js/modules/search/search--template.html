@@ -21,20 +21,24 @@
     </ul>
   </section>
 
-  <section id="search" class="col-xs-12">
+</div>
 
-    <form ng-submit="nameSearch(0)" class=" clearfix" novalidate>
-      <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
-      <div class="input-group input-group-lg col-xs-11">
-        <input class="form-control" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
-        <span class="input-group-btn">
-          <button class="btn btn-info">
-            <span id="searchButton" class="glyphicon glyphicon-search"/>
-          </button>
-        </span>
-      </div>
-    </form>
+<section id="search" class="col-xs-12">
 
+  <form ng-submit="nameSearch(0)" class="clearfix" novalidate>
+    <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
+    <div class="input-group input-group-lg col-xs-11">
+      <input class="form-control" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
+      <span class="input-group-btn">
+        <button class="btn btn-info">
+          <span id="searchButton" class="glyphicon glyphicon-search"/>
+        </button>
+      </span>
+    </div>
+  </form>
+
+  <section>
+    A bunch of other options here.
   </section>
 
-</div>
+</section>

@@ -327,9 +327,11 @@ center {
 
 		header #search {
 			/*left: auto;*/
-			position: fixed;
+			position: absolute;
       top: 0;
       right: 0;
+      background: #3A546D;
+      z-index: 1131;
 		}
 
 		header #search .listIcon {
@@ -371,10 +373,8 @@ center {
 
 		header #search {
 			/*position: absolute;*/
-			z-index: 1131;
 			/*display: block;*/
 			/*text-align: right;*/
-			background: #3A546D;
 			/*height: 60px;*/
 			/*padding: 14px 0;*/
 			/*width: 100%;*/
