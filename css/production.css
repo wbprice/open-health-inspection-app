@@ -222,6 +222,7 @@ center {
 		position: relative;
 		padding-right: 0;
 		padding: 0;
+    z-index: 1131;
 	}
 		header #searchbar .logo {
 			display: inline-block;
@@ -326,13 +327,16 @@ center {
 			}
 
 		header #search {
-			/*left: auto;*/
-			position: absolute;
+			/* position: absolute; */
       top: 0;
       right: 0;
-      background: #3A546D;
-      z-index: 1131;
+      z-index: 1350;
 		}
+
+    header #search form {
+      margin-top: 12px;
+      background: #3A546D;
+    }
 
 		header #search .listIcon {
 			margin: 0;
@@ -388,18 +392,6 @@ center {
 				position: relative;
 				right: .5em;
 
-			}
-			#search input, #search button {
-				height: 36px;
-			}
-			#search input {
-				border: none;
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-			#search button {
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
 			}
 
 #main {
