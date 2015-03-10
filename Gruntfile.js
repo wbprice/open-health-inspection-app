@@ -47,14 +47,15 @@ module.exports = function(grunt) {
             }
         },
 
-        cssmin: {
-            minify: {
-              expand: true,
-              cwd: 'css/',
-              src: 'production.css',
-              dest: 'css/',
-              ext: '.min.css'
+        sass: {
+          dist: {
+            options: {
+              style: 'expanded'
+            },
+            files: {
+              'dist/main.css': 'scss/main.scss',       // 'destination': 'source'
             }
+          }
         },
 
         imagemin: {
@@ -89,8 +90,8 @@ module.exports = function(grunt) {
                 },
             },
             styles: {
-                files: ['css/*.css'],
-                tasks: ['concat', 'cssmin'],
+                files: ['scss/**/*.scss', 'scss/*.scss'],
+                tasks: ['sass'],
                 options: {
                     spawn: false,
                     livereload: true
@@ -131,10 +132,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('build', ['browserify', 'concat', 'uglify', 'cssmin', 'imagemin']);

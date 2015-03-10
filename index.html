@@ -26,7 +26,7 @@
 
     <title>Open Health Inspection</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/production.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/main.css"/>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic,400italic,700,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -55,58 +55,7 @@
             </a>
           </div>
 
-          <div id="searchbar" class="col-xs-12 col-sm-5 col-md-4 clearfix" ng-controller="searchCtrl">
-
-            <section id="search" ng-show="isSearchbarVisible" class="col-xs-12">
-
-              <form ng-submit="nameSearch(0)" class=" clearfix" novalidate>
-                <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
-                <input id="searchField" class="col-xs-9" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
-                <button class="btn btn-info col-xs-2">
-                  <span id="searchButton" class="glyphicon glyphicon-search"/>
-                </button>
-              </form>
-
-              <section class="clearfix row tray drop-shadow">
-                <ul class="">
-                  <li class="col-xs-6 searchDescription">
-                  <small>Search in:</small>{{searchAreaText}}</li>
-                  <li class="col-xs-6 moreButton">
-                    <a ng-click="toggleCityJump(true)">
-                      More Cities <i class="fa fa-plus-circle"></i>
-                    </a>
-                  </li>
-                </ul>
-              </section>
-
-            </section>
-
-            <a href="#/" class="visible-xs" class="clearfix">
-              <img class="logo" src="img/build/logo.png" height="48px" width="48px" alt="logo">
-            </a>
-
-            <button ng-click="toggleSearchField()" class="btn btn-lg btn-transparent">
-              <span id="searchButton" class="glyphicon glyphicon-search"></span>
-            </button>
-
-            <button ng-click="getLocationButton()" class="btn btn-lg btn-transparent">
-              <span class="fa fa-crosshairs"></span>
-            </button>
-
-            <button ng-click="goToResults()" class="btn btn-lg btn-transparent" ng-if="isCloseButtonVisible">
-              <span class="glyphicon glyphicon-remove-circle"></span>
-            </button>
-
-            <section class="clearfix tray drop-shadow" ng-show="isVisible">
-              <ul>
-                <li class="col-xs-12">
-                  <small>Displaying results</small>
-                  {{searchQuery}} <span>In</span> {{searchAreaText}}
-                </li>
-              </ul>
-            </section>
-
-          </div>
+          <search-menu></search-menu>
 
         </div>
 
