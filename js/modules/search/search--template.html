@@ -12,30 +12,6 @@
     <span class="glyphicon glyphicon-remove-circle"></span>
   </button>
 
-  <section id="search" ng-show="isSearchbarVisible" class="col-xs-12">
-
-    <form ng-submit="nameSearch(0)" class=" clearfix" novalidate>
-      <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
-      <input id="searchField" class="col-xs-9" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
-      <button class="btn btn-info col-xs-2">
-        <span id="searchButton" class="glyphicon glyphicon-search"/>
-      </button>
-    </form>
-
-    <section class="clearfix row tray drop-shadow">
-      <ul class="">
-        <li class="col-xs-6 searchDescription">
-        <small>Search in:</small>{{searchAreaText}}</li>
-        <li class="col-xs-6 moreButton">
-          <a ng-click="toggleCityJump(true)">
-            More Cities <i class="fa fa-plus-circle"></i>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-  </section>
-
   <section class="clearfix tray drop-shadow" ng-show="isVisible">
     <ul>
       <li class="col-xs-12">
@@ -43,6 +19,22 @@
         {{searchQuery}} <span>In</span> {{searchAreaText}}
       </li>
     </ul>
+  </section>
+
+  <section id="search" class="col-xs-12">
+
+    <form ng-submit="nameSearch(0)" class=" clearfix" novalidate>
+      <span id="exitButton" ng-click="toggleSearchField()" class="col-xs-1 glyphicon glyphicon-chevron-left"></span>
+      <div class="input-group input-group-lg col-xs-11">
+        <input class="form-control" type="search" ng-model="query" placeholder="Search for a restaurant" focus-me="isSearchbarVisible"/>
+        <span class="input-group-btn">
+          <button class="btn btn-info">
+            <span id="searchButton" class="glyphicon glyphicon-search"/>
+          </button>
+        </span>
+      </div>
+    </form>
+
   </section>
 
 </div>
